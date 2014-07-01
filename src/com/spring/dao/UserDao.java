@@ -1,14 +1,18 @@
 package com.spring.dao;
 
-import javax.annotation.Resource;
-
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
 
 import com.spring.entity.User;
 
+
+@Scope("prototype")
 @Repository
 public class UserDao implements IUserDao {
 	
+	public UserDao(){
+		System.out.println("init");
+	}
 
 	@Override
 	public void add(com.spring.entity.User user) {

@@ -14,7 +14,12 @@ public class TestIOC {
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				new String[] { "applicationContext.xml" });
 		UserService service = context.getBean("userService",UserService.class);
+		UserService service1 = context.getBean("userService",UserService.class);
+		UserService service2 = context.getBean("userService",UserService.class);
 		service.add(new User());
+		service1.add(new User());
+		service2.add(new User());
+		
 	}
 
 }
