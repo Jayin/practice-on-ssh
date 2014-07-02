@@ -1,0 +1,11 @@
+package com.hib.entity;
+
+import javax.xml.crypto.Data;
+
+public class Event {
+	private Long id;
+	private String title;
+	private Data data;
+
+	 
+}

@@ -1,0 +1,24 @@
+package com.hib.entity;
+
+public class Event {
+	private long id;
+	private String title;
+	private Data data;
+
+	public long getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+}

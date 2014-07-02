@@ -1,0 +1,9 @@
+package com.hib.entity;
+
+public class Event {
+	private Long id;
+	private String title;
+	private Data data;
+
+	 
+}

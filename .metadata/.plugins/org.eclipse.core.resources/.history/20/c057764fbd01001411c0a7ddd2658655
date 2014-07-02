@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hib.entity">
+	<class name="Event" table="event">
+		<id name="id" column="event_id"></id>
+		<property name="title"></property>
+		<property name="data"></property>
+	</class>
+
+</hibernate-mapping>
