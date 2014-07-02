@@ -1,0 +1,24 @@
+package com.spring.test;
+
+import com.spring.dao.UserDao;
+import com.spring.entity.User;
+import com.spring.service.IUserService;
+import com.spring.service.UserService;
+
+public class TestUserService {
+	public static void main(String[] args) {
+		UserService userService = new UserService(new UserDao());
+		User user = new User();
+
+		service.add(user);
+		System.out.println();
+
+		service.update(user);
+		System.out.println();
+
+		service.delete(1L);
+		System.out.println();
+
+		service.findById(2L);
+	}
+}

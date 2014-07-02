@@ -1,0 +1,11 @@
+package com.spring.aop;
+
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
+
+@Aspect
+public class MyAspect {
+
+	@Pointcut()
+	private void cut1(){};
+}

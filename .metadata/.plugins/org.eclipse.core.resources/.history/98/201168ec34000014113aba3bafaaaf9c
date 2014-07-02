@@ -1,0 +1,14 @@
+package com.xcode;
+
+public class Obj2json {
+	private String
+	
+	public String toJSON(Object obj){
+		obj.class.getField(name)
+		return "";
+	}
+	
+//1.get all field  key-value
+//2.get 
+
+}

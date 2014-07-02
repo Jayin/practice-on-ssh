@@ -1,0 +1,31 @@
+package com.spring.dao;
+
+import com.spring.entity.User;
+
+public class HibernateUserDao implements IUserDao {
+
+	@Override
+	public void add(User user) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void findById(Long id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void update(User user) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

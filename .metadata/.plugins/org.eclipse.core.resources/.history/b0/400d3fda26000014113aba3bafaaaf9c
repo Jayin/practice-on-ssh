@@ -1,0 +1,25 @@
+package com.spring.dao;
+
+public class User implements IUserDao {
+
+	@Override
+	public void add(com.spring.entity.User user) {
+		System.out.println("User add method");
+	}
+
+	@Override
+	public void delete(Long id) {
+
+	}
+
+	@Override
+	public void findById(Long id) {
+
+	}
+
+	@Override
+	public void update(com.spring.entity.User user) {
+
+	}
+
+}

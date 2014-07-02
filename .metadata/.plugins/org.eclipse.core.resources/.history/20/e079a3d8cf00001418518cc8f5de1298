@@ -1,0 +1,14 @@
+package com.spring.test;
+
+
+public class TestIOC {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		 
+		A
+	}
+
+}
