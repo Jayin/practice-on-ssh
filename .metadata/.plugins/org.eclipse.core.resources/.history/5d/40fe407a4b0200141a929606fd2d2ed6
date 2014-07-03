@@ -1,0 +1,12 @@
+package com.hib.dao;
+
+import com.hib.entity.Event;
+
+public interface IEventDao {
+
+	public void add(Event event);
+	
+	public void update(Event event);
+	
+	public void delete(Event event);
+}

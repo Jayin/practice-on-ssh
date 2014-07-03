@@ -1,0 +1,44 @@
+package com.hib.dao;
+
+import java.util.List;
+
+import org.hibernate.Session;
+
+import com.hib.entity.Event;
+import com.hib.utils.HibernateUtil;
+
+public class EventDao {
+
+	public void addEvent(Event event) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+
+		session.save(event);
+		
+		session.getTransaction().commit();
+	}
+	
+	public void updateEvent(Event event){
+		Session seesion = HibernateUtil.getSessionFactory().getCurrentSession();
+		seesion.beginTransaction();
+		seesion.update(event);
+		seesion.getTransaction().commit();
+	}
+	
+	public void delelteEvent(){
+		Session seesion = HibernateUtil.getSessionFactory().getCurrentSession();
+		seesion.beginTransaction();
+		seesion.delete(seesion);
+		seesion.getTransaction().commit();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Event> getEvents(){
+		Session seesion = HibernateUtil.getSessionFactory().getCurrentSession();
+		seesion.beginTransaction();
+		List<Event> result  = seesion.createQuery("select * from event").list();
+		seesion.getTransaction().commit();
+		return result;
+	}
+
+}

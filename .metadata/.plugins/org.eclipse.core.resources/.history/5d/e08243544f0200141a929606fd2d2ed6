@@ -1,0 +1,59 @@
+package com.hib.dao;
+
+import java.util.List;
+
+import org.hibernate.Session;
+
+import com.hib.entity.Event;
+import com.hib.utils.HibernateUtil;
+
+public class EventDao implements IEventDao {
+
+	@Override
+	public void add(Event event) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+
+		session.save(event);
+
+		session.getTransaction().commit();
+	}
+
+	@Override
+	public void update(Event event) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		session.update(event);
+		session.getTransaction().commit();
+	}
+
+	@Override
+	public void delete(Event event) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		session.delete(session);
+		session.getTransaction().commit();
+	}
+
+	@Override
+	public void deleteAll() {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		List<Event> events = findAll()
+		for(Event e : events){
+			session.delete(e);
+		}
+		session.getTransaction().commit();
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Event> findAll() {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		List<Event> result = session.createSQLQuery("select * from events")
+				.list();
+		session.getTransaction().commit();
+		return result;
+	}
+
+}

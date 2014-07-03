@@ -31,4 +31,8 @@ public class Event {
 		this.date = date;
 	}
 
+	@Override
+	public String toString() {
+		return "Event [id=" + id + ", title=" + title + ", date=" + date + "]";
+	}
 }
