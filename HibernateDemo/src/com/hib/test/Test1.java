@@ -48,7 +48,7 @@ public class Test1 {
 		// t.add();
 //		t.findById(2L);
 		t.findAll();
-//		t.deleteAll();
+		t.deleteAll();
 		t.findAll();
 //		t.delete(t.findById(1L));
 	}
