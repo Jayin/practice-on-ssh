@@ -1,17 +1,11 @@
 package com.hib.dao;
 
-import java.util.List;
 
-import com.hib.entity.Event;
+import com.hib.dao.base.IBaseDao;
 
-public interface IEventDao {
-
-	public void add(Event event);
-
-	public void update(Event event);
-
-	public void delete(Event event);
-
-
-	public Event findById(Long id);
+public interface IEventDao<Event> extends IBaseDao<Event>{
+	//定义 IEventDao 的特定业务逻辑
+	public void deleteAll();
 }
+
+	 

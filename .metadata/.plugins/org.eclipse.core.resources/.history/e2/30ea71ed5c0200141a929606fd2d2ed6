@@ -1,0 +1,10 @@
+package com.hib.dao;
+
+
+import com.hib.dao.base.IBaseDao;
+
+public interface IEventDao<T> extends IBaseDao<T>{
+	
+}
+
+	 

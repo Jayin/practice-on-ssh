@@ -23,6 +23,10 @@ public class Test1 {
 	public void delete(Event e) {
 		eventDao.delete(e);
 	}
+	
+	public void deleteAll() {
+		eventDao.deleteAll();
+	}
 
 	public void update() {
 
@@ -33,11 +37,19 @@ public class Test1 {
 		System.out.println(e.toString());
 		return e;
 	}
+	
+	public void findAll(){
+		List<Event> es = eventDao.findAll();
+		System.out.println(es.toString());
+	}
 
 	public static void main(String[] args) {
 		Test1 t = new Test1();
 		// t.add();
-		t.findById(1L);
-		t.delete(t.findById(1L));
+//		t.findById(2L);
+		t.findAll();
+//		t.deleteAll();
+		t.findAll();
+//		t.delete(t.findById(1L));
 	}
 }

@@ -1,0 +1,5 @@
+package com.hib.dao.base;
+
+public class BaseDao implements IBaseDao<T> {
+
+}
