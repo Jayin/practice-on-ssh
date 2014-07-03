@@ -52,7 +52,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 		session.beginTransaction();
 
 		T result = (T) session.get(this.entity, id);
-
 		session.getTransaction().commit();
 		return result;
 	}
@@ -62,13 +61,11 @@ public class BaseDao<T> implements IBaseDao<T> {
 	public List<T> findAll() {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
-		//可能会出错
+	 
 		List<T> result =  session.createQuery("from "+this.entity.getName()).list();
 
 		session.getTransaction().commit();
 		return result;
 	}
 	
-	
-
 }
