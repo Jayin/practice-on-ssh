@@ -1,11 +1,13 @@
-@Entity 声明一个类为实体bean(即一个持久化POJO类)
+package com.hib.annotation.entity;
 
-@table(name="tableName" ....)
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.persistence.UniqueConstraint;
 
-实体Bean中static 和有注解@Transient 均不会被持久化(映射成一行) 
-
-举个例子 最直观
-```java
 @Entity
 @Table(name="table_user") //指定表明
 public class User {
@@ -56,5 +58,3 @@ public class User {
 		this.psw = psw;
 	}
 }
-
-```
