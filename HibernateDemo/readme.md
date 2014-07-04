@@ -13,7 +13,7 @@ public class User {
 	@Id
 	@GeneratedValue 
 	private Long id;
-	//自动类型判断,不用
+	//自动类型判断,不用声明也行，默认varchar(255)
 	private String name;
 	
 	// 指定约束，和列名

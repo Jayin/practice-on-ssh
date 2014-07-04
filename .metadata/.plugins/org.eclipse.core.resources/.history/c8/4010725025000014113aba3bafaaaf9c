@@ -1,8 +1,0 @@
-package com.spring.dao;
-
-public interface IUserDao {
-
-	public void add(){
-		
-	}
-}

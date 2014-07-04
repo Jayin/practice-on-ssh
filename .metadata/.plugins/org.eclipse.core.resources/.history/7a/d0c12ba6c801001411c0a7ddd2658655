@@ -1,5 +1,0 @@
-package com.hib.utils;
-
-public class HibernateUtil {
-
-}

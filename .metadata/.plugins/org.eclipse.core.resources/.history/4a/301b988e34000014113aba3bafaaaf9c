@@ -1,9 +1,0 @@
-package com.xcode;
-
-public class Obj2json {
-	
-	public static String toJSON(Ojbject obj){
-		
-	}
-
-}

@@ -1,6 +1,0 @@
-package com.hib.entity;
-
-public class User {
-	private long id;
-	
-}
