@@ -8,6 +8,8 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Lob;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -15,6 +17,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="article")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE) 
 public class Article {
 	
 	@Id

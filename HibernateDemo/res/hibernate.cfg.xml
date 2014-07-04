@@ -31,5 +31,8 @@
 		<mapping resource="com/hib/entity/Event.hbm.xml" />
 		<mapping class="com.hib.annotation.entity.User" />
 		<mapping class="com.hib.annotation.entity.Article" />
+		<mapping class="com.hib.annotation.entity.Eassy" />
+		<mapping class="com.hib.annotation.entity.Dog" />
+	
 	</session-factory>
 </hibernate-configuration>
