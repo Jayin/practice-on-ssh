@@ -6,7 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import javax.persistence.UniqueConstraint;
 
 @Entity
 @Table(name="table_user") //指定表明
@@ -19,7 +18,7 @@ public class User {
 	private String name;
 	
 	// 指定约束，和列名
-	@Column(unique=true,name="user_id",nullable=false)   
+	@Column(name="user_id",unique=true,nullable=false)   
 	private long userId;
 	
 	//比如密码比较密码啦，我们不保存到数据库,表对应的列也不会声场
