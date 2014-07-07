@@ -1,0 +1,93 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/hibernatedemo</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">1</property>
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property>
+		<!-- Disable the second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+		<!-- Drop and re-create the database schema on startup -->
+		<property name="hbm2ddl.auto">create</property>
+		<!-- 
+		hibernate影射到生成操纵数据库表结构语言属性讲解
+			create:启动的时候会先drop,再create.
+			create-drop:也表示创建,在系统关闭前执行drop.
+			update:不会drop，这个操作会在启动的时候去检查schema是否一致，如果不一致会做schema更新。（schema为数据库对象的集合）
+			validate:启动时验证现有的schema与你配置的hibernate是否一致，如果不一致则抛出异常,并不做更新。
+		 -->
+		
+		
+		<!-- 映射实体配置区域 -->
+		<!-- hibernate3.5以前映射列表必须父类在前，子类在后。新版本父类与子类的前后顺序已经不影响hibernate映射了，但是还是建议大家遵循该声明原则。 -->
+		<!-- mapping resource 指定需要进行映射的配置文件 -->
+		<mapping resource="Event.hbm.xml"/>
+		
+		<!-- mapping class 指定需要进行映射的实体类 -->		
+		<mapping class="com.hibernate.ch02.orm.entity.pojo.User"/>
+		
+		<!-- extend 继承例子1 -->
+		<!-- extend 默认为2.每个"类层次结构"一张表 Dtype
+			1.每个"类"一张表:InheritanceType.TABLE_PER_CLASS
+			2.每个"类层次结构"一张表（默认推荐）:InheritanceType.SINGLE_TABLE
+			3.连接的子类:InheritanceType.JOINED
+			4.从父类继承属性，但不持久化父类:@MappedSuperclass
+		-->	
+		<mapping class="com.hibernate.ch02.orm.entity.extend.ex1.Plane"/>
+		<mapping class="com.hibernate.ch02.orm.entity.extend.ex1.A320"/>
+		<!-- extend 继承例子2 -->	
+		<mapping class="com.hibernate.ch02.orm.entity.extend.ex2.Orders"/>
+		<!-- extend 继承例子3 -->	
+		<mapping class="com.hibernate.ch02.orm.entity.extend.ex3.Boat"/>
+		<mapping class="com.hibernate.ch02.orm.entity.extend.ex3.Ferry"/>
+		<mapping class="com.hibernate.ch02.orm.entity.extend.ex3.SailerBoat"/>
+		<!-- OneToOne：
+			1.共享主键:@PrimaryKeyJoinColumn
+			2.外键关联:@JoinColumn（默认推荐，可设置由其中一方维护关联关系即可，单向）
+			3.关联表关联:@JoinTable(双向关联)
+		-->
+		<!-- OneToOne 例子1 -->	
+		<mapping class="com.hibernate.ch02.orm.entity.one2one.ex01.Body"/>
+		<mapping class="com.hibernate.ch02.orm.entity.one2one.ex01.Heart"/>
+		<!-- ManyToOne 
+			1.外键关联：@JoinColumn,默认，由多的一方维护关联关系，单向
+			2.关联表关联:@JoinTable
+		-->
+		<!--ManyToOne 例子1  -->
+		<mapping class="com.hibernate.ch02.orm.entity.many2one.Company"/>
+		<mapping class="com.hibernate.ch02.orm.entity.many2one.Flight"/>
+		<!-- OneToMany 
+			1.OneToMany双向的 外键关联：推荐,@JoinColumn 主端，由多的一方维护关联关系，从表实体对象使用mappedBy（双向使用）
+			2.OneToMany单向的 外键关联：不推荐
+			3.OneToMany单向的关联表关联：推荐，@JoinTable
+		-->	
+		<!--OneToMany 例子1  -->
+		<mapping class="com.hibernate.ch02.orm.entity.one2many.Soldier"/>
+		<mapping class="com.hibernate.ch02.orm.entity.one2many.Troop"/>
+		
+		<!-- ManyToMany 
+			1.关联表关联：默认@JoinTable
+		-->
+		<!--ManyToMany 例子1  -->
+		<mapping class="com.hibernate.ch02.orm.entity.many2many.Store"/>
+		<mapping class="com.hibernate.ch02.orm.entity.many2many.StoreCustomer"/>
+		
+		<!-- hql -->
+		<mapping class="com.hibernate.ch02.orm.entity.hql.Department"/>
+		<mapping class="com.hibernate.ch02.orm.entity.hql.Staff"/>
+	</session-factory>
+</hibernate-configuration>

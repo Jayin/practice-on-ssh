@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!--package指定映射实体类所在的包路径  -->
+<hibernate-mapping package="com.hibernate.ch01.entity">
+	<!--class指定映射类  name指定类的名称 table指定映射到数据库表的名称 -->
+	<class name="Event" table="t_event">
+		<!--id指定映射类主键  name指定主键的名称 column指定主键映射到数据库表中的列名 -->
+		<id name="id" column="EVENT_ID">
+			<!--generator指定主键映射到数据库的生成策略(7种) -->
+			<generator class="native"/>
+		</id>
+		<!--property指定当前（name）类属性及映射到数据库的（column）列名及（type）数据类型 -->
+		<property name="date" type="timestamp" column="EVENT_DATE"/>
+		<!--hibernate-mapping内所有的标签都有一些默认值 例如下面title 属性，没有定义type，column那么默认数据类型为String,默认列名为属性名-->
+		<property name="title"/>
+		<!-- 相当于： -->
+		<!--<property name="title" type="string" column="title"/>-->
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,7 @@
+预演技术流程：
+1.找资源：支持类库，API,DEMO（官方和第三方资源）
+2.快速搭建简单HelloWord例子：
+	1）引入所需的支持类库(Add to bulidPath)
+	2）配置文件（可选Use as source folder）：web.xml,hibernate.cfg.xml,spring.xml,struts.xml etc
+	3）简单的TestMain
+3.与项目整合
