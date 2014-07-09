@@ -1,0 +1,39 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="default"  extends="struts-default" >
+    
+        <action name="HelloWorld" class="com.demo.action.HelloWorld">
+            <result name="SUCCESS">/success.jsp</result>        
+        </action>
+         
+        <action name="UserAction" class="com.demo.action.UserAction">
+            <result name="success">/resultUserAction.jsp</result>        
+        </action>
+        
+        
+         <action name="UserAction2" class="com.demo.action.UserAction2">
+            <result name="success">/resultUserAction2.jsp</result>        
+        </action>
+        
+        
+        <action name="*UserAction2" class="com.demo.action.UserAction2" method="{1}">
+            <result name="success">/resultUserAction2.jsp</result>        
+        </action>
+       
+        <action name="addUserAction2" class="com.demo.action.UserAction2" method="add">
+            <result name="success">/resultUserAction2.jsp</result>        
+        </action>
+        
+         <action name="updateUserAction2" class="com.demo.action.UserAction2" method="update">
+            <result name="success">/resultUserAction2.jsp</result>        
+        </action>
+        
+         <action name="deleteUserAction2" class="com.demo.action.UserAction2" method="delete">
+            <result name="success">/resultUserAction2.jsp</result>        
+        </action>
+     
+    </package>
+</struts>
